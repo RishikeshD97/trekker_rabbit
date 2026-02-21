@@ -9,6 +9,10 @@
       "answer": "Pricing depends on your business requirements. Please contact our sales team."
     },
     {
+      "keywords": ["hey", "hii", "hello"],
+      "answer": "Hii nice to connect with you."
+    },
+    {
       "keywords": ["contact", "phone", "email"],
       "answer": "You can contact us at support@company.com or call 9876543210."
     }
