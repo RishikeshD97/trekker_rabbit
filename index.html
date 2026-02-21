@@ -187,20 +187,57 @@ document.getElementById("minimize").onclick = function () {
 };
 
 // ===== Send message =====
+// ===== Q&A Data =====
+const qaData = [
+  {
+    keywords: ["hi", "hello", "hey"],
+    answer: "👋 Hello! Welcome to Trek Planner. How can I help you?"
+  },
+  {
+    keywords: ["price", "cost"],
+    answer: "💰 Trek prices depend on location and duration. Which trek are you interested in?"
+  },
+  {
+    keywords: ["contact", "phone"],
+    answer: "📞 You can contact us at 9876543210."
+  },
+  {
+    keywords: ["book", "booking"],
+    answer: "📝 Sure! Please tell me which trek you want to book."
+  }
+];
+
+// ===== Send Message Function =====
 function sendMessage() {
   const input = document.getElementById("userInput");
-  const msg = input.value.trim();
+  const msg = input.value.trim().toLowerCase();
   if (!msg) return;
 
   const messages = document.getElementById("messages");
 
+  // Add user message
   messages.innerHTML += `<div class="user-msg">${msg}</div>`;
   input.value = "";
 
+  // Get bot reply
+  const reply = getBotReply(msg);
+
   setTimeout(() => {
-    messages.innerHTML += `<div class="bot-msg">Thanks! We'll help you plan your trek.</div>`;
+    messages.innerHTML += `<div class="bot-msg">${reply}</div>`;
     messages.scrollTop = messages.scrollHeight;
   }, 600);
+}
+
+// ===== Reply Logic =====
+function getBotReply(message) {
+  for (let item of qaData) {
+    for (let keyword of item.keywords) {
+      if (message.includes(keyword)) {
+        return item.answer;
+      }
+    }
+  }
+  return "🤖 Sorry, I didn’t understand that. Can you rephrase?";
 }
 </script>
 
