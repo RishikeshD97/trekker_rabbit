@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Client Chatbot</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+  <style>
+    body { font-family: Arial; }
+    #chatbox {
+      width: 300px;
+      height: 400px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    #messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .user { text-align: right; margin: 5px; color: blue; }
+    .bot { text-align: left; margin: 5px; color: green; }
+    #inputArea {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+    button {
+      padding: 8px;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="chatbox">
+  <div id="messages"></div>
+  <div id="inputArea">
+    <input type="text" id="input" placeholder="Ask something..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "keywords": ["services", "what do you do"],
+      "answer": "We provide cybersecurity services including XDR, AV and NAC solutions."
+    },
+    {
+      "keywords": ["price", "cost", "pricing"],
+      "answer": "Pricing depends on your business requirements. Please contact our sales team."
+    },
+    {
+      "keywords": ["contact", "phone", "email"],
+      "answer": "You can contact us at support@company.com or call 9876543210."
+    }
+  ]
+}
